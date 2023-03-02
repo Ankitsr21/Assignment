@@ -1,6 +1,4 @@
-// A Java program to demonstrate that we needed
-// multiple catch blocks for multiple exceptions
-// prior to Java 7
+
 
 import java.util.Scanner;
 public class multiCatch
