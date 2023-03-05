@@ -1,43 +1,40 @@
 import java.util.Stack;
 
-class Ques3 extends Stack<Integer> {
-    Stack<Integer> min = new Stack<>();
-    void push(int x) {
-        if (isEmpty() == true) {
-            super.push(x);
-            min.push(x);
+public class Ques3{
+
+    Stack<Integer> ss=new Stack<>();
+    Stack<Integer> s=new Stack<>();
+
+
+    void push(int a){
+        s.push(a);
+        if(ss.size()==0||ss.peek()>a){
+            ss.push(a);
         }
-        else {
-            super.push(x);
-            int y = min.pop();
-            min.push(y);
-            if (x < y)
-                min.push(x);
-            else
-                min.push(y);
+        return;
+    }
+    int pop(){
+        if(s.size()==0)
+            return -1;
+        int ans=s.peek();
+        s.pop();
+        if(ss.peek()==ans){
+            ss.pop();
         }
+        return ans;
     }
-
-    public Integer pop() {
-        int x = super.pop();
-        min.pop();
-        return x;
+    int getMin(){
+        if(ss.size()==0)
+            return -1;
+        return ss.peek();
     }
+    public static void main(String[]args){
 
-    int getMin() {
-        int x = min.pop();
-        min.push(x);
-        return x;
-    }
-
-    public static void main(String[] args) {
-        Ques3 s = new Ques3();
-        s.push(9);
-        s.push(22);
-        s.push(12);
-        System.out.println(s.getMin());
-        s.push(5);
-        s.push(0);
-        System.out.println(s.getMin());
+        Ques3 stk = new Ques3();
+        stk.push(1);
+        stk.push(23);
+        stk.push(0);
+        stk.push(2);
+        System.out.println(stk.getMin());
     }
 }
