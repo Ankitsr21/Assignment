@@ -3,9 +3,7 @@ interface myInterface3{
 }
 public class Ques1d {
     public static void main(String[]args){
-        myInterface3 demo = (a)->{
-          return a.toUpperCase();
-        };
+        myInterface3 demo = (a)->a.toUpperCase();
         System.out.println(demo.upperCase("tothenew"));
     }
 }

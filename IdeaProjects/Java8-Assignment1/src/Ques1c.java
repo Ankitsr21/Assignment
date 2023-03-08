@@ -3,9 +3,7 @@ interface myInterface2{
 }
 public class Ques1c {
     public static void main(String[]args){
-        myInterface2 demo = (a,b)->{
-          return a+b;
-        };
+        myInterface2 demo = (a,b)->a+b;
         System.out.println(demo.concat("Ankit","Rawat"));
     }
 }
